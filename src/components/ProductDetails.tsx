@@ -28,7 +28,7 @@ export default function ProductDetails({product} : ProductDetailsProps) {
             </td>
 
             <td className="p-3 text-lg text-gray-800">
-                {formatCurrency(product.price)}
+                {formatCurrency(Number(product.price))}
             </td>
 
             <td className="p-3 text-lg text-gray-800">
