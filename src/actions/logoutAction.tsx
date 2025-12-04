@@ -1,9 +1,9 @@
 // client/src/actions/logoutAction.tsx (Archivo Nuevo)
 
-import { redirect, type ActionFunctionArgs } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import { logoutUser } from "../services/AuthService";
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action() {
     // Elimina el token de localStorage
     logoutUser();
 

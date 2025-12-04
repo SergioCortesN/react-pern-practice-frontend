@@ -6,12 +6,12 @@ import Products, {loader as productsLoader, action as updateAvailabilityAction} 
 import NewProduct, {action as newProductAction} from './views/NewProduct'
 import EditProduct, {loader as editProductLoader, action as editProductAction} from './views/EditProduct'
 import {action as deleteProductAction} from './components/ProductDetails'
-import Login, {action as loginAction} from './views/Login' 
+import Login, {action as loginAction} from './views/login' 
 import { getToken } from './services/AuthService' 
 import { action as logoutAction } from './actions/logoutAction' 
 
 // Loader/Guard Global para verificar la autenticación
-export async function checkAuthLoader({request, params} : LoaderFunctionArgs) {
+export async function checkAuthLoader({request} : LoaderFunctionArgs) {
     const token = getToken();
     const url = new URL(request.url);
 

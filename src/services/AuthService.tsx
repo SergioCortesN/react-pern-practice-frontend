@@ -1,6 +1,5 @@
 import axios, { type AxiosRequestConfig } from "axios";
-import { object, string } from "valibot"; 
-import type { Output } from "valibot";
+import { object, string, type InferOutput } from "valibot";
 
 export const API_URL = import.meta.env.VITE_API_URL;
 
@@ -9,7 +8,7 @@ export const LoginSchema = object({
     password: string(),
 });
 
-export type LoginCredentials = Output<typeof LoginSchema>
+export type LoginCredentials = InferOutput<typeof LoginSchema>
 
 type AuthResponse = {
     token: string;

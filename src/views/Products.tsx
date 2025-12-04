@@ -1,4 +1,4 @@
-import {Link, useLoaderData, type ActionFunction, type ActionFunctionArgs, redirect} from 'react-router-dom'
+import {Link, useLoaderData, type ActionFunctionArgs, redirect} from 'react-router-dom'
 import { getProducts, updateProductAvailability } from '../services/ProductService';
 import ProductDetails from '../components/ProductDetails';
 import type { Product } from '../types';

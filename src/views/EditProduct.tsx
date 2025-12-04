@@ -1,4 +1,4 @@
-import { Link, Form, useActionData, type ActionFunctionArgs, redirect, type LoaderFunction, type LoaderFunctionArgs, useLoaderData} from 'react-router-dom'
+import { Link, Form, useActionData, type ActionFunctionArgs, redirect, type LoaderFunctionArgs, useLoaderData} from 'react-router-dom'
 import ErrorMessage from '../components/ErrorMessage'
 import  { getProductById, updateProduct } from '../services/ProductService' // <-- Importaciones ajustadas
 import type { Product } from '../types'
@@ -36,6 +36,7 @@ export async function action({request, params} : ActionFunctionArgs){
     try {
         if(params.id !== undefined) {
             await updateProduct(data, +params.id)
+            return redirect('/') // Redirige a la página principal después de actualizar
         }
     } catch (error) {
         return redirect('/login') // Maneja errores de token en acciones
